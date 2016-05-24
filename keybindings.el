@@ -13,11 +13,11 @@
 (spacemacs/declare-prefix "oF" "Mmwi-sin-transient")
 (spacemacs/set-leader-keys
   "of" 'spacemacs/mmwi-control-transient-state/body
-  "oFj" mmwi-control/PlayPause
-  "oFl" mmwi-control/SongNext
-  "oFh" mmwi-control/SongPrev
-  "oFo" mmwi-control/VolumeUp
-  ("oFi" mmwi-control/VolumeDown)
+  "oFj" 'mmwi-control/PlayPause
+  "oFl" 'mmwi-control/SongNext
+  "oFh" 'mmwi-control/SongPrev
+  "oFo" 'mmwi-control/VolumeUp
+  "oFi"'mmwi-control/VolumeDown
 
   )
 
