@@ -24,7 +24,7 @@
   (interactive)
   (shell-command (concat mmwi-location "/Control/SongPrev"))
   )
-(defun mmwi/next ()
+(defun mmwi/SongNext ()
   "Función para parar o comenzar una canción"
   (interactive)
   (shell-command (concat mmwi-location "/Control/SongNext"))
