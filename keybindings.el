@@ -1,6 +1,6 @@
 ;;Archivo que tiene los keybindings para el modo y toda esa caca.
 (spacemacs|define-transient-state mmwi-control
-  :title "Foobar 2000 remote control"
+  :title "Mmwi remote control"
   :doc "\n[_h_] Prev \[_l_] next \[_j_] play/pause \ [_i_]VolDown \[_o_] VolUp."
   :bindings
   ("j" mmwi-control/PlayPause)
