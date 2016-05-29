@@ -1,7 +1,7 @@
-#+TITLE: foobar2000-control layer
+#+TITLE: mmwi-control layer
 
 # The maximum height of the logo should be 200 pixels.
-[[img/foobar2000-control.png]]
+[[img/mmwi-control.png]]
 
 # TOC links should be GitHub style anchors.
 * Table of Contents                                        :TOC_4_gh:noexport:
@@ -10,19 +10,19 @@
  - [[#key-bindings][Key bindings]]
 
 * Description
- This layer allows you to control your foobar2000 using emacs. How fun!. 
+  This layer allows you to control your mediamonkey using emacs through mmwi. How fun!. 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
-add =foobar2000-control= to the existing =dotspacemacs-configuration-layers= list in this
+add =mmwi-control= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
 This layer, by default, searches in program files (x86). To change that, use, instead, in the dotfile:
 #+SRC_BEGIN emacs-lisp
-(foobar2000-control :variables
-                         foobar2000-location  "\"C:\\Program Files (x86)\\foobar2000\\foobar2000.exe\""
+(mmwi-control :variables
+                         mmwi-location  "http:\\ip.direction:port"
                          )
 
-#+SRC_END
+#+SRC_END 
 * Key bindings
 
 | Key Binding | Description                                        |
@@ -32,7 +32,8 @@ This layer, by default, searches in program files (x86). To change that, use, in
 | ~SPC o F l~ | Next song.                                         |
 | ~SPC o F j~ | Starts/pauses the song.                            |
 | ~SPC o F k~ | Stops the song.                                    |
-| ~SPC o F u~   | Plays a random song.                               |
+| ~SPC o F o~ | Volume Up.                                         |
+| ~SPC o F i~ | Volume Down.                                       |
 # Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
 # Examples:
 # [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
