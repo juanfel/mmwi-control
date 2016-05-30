@@ -6,4 +6,4 @@
       ( :command-name "PlayPause" :command "/Control/PlayPause" :key "j")
       ( :command-name "SongPrev" :command "/Control/SongPrev" :key "h")
       ( :command-name "SongNext" :command "/Control/SongNext" :key "l")
-      ))'
+      ))
