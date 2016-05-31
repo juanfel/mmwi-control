@@ -29,6 +29,16 @@
   (interactive)
   (url-retrieve-synchronously (concat mmwi-location "/Control/SongNext"))
   )
+(defun mmwi-control/create-final-command (command-Plist)
+  "Toma un plist con un comando, y le agrega las cosas que le faltan para indicar los comandos finales"
+  (plist-put command-Plist :command-name (concat "mmwi-control/" (plist-get command-Plist :command-name)) )
+  (plist-put command-Plist :command (concat mmwi-location (plist-get command-Plist :command)) )
+  (plist-put command-Plist :key-full (concat mmwi-option-key (upcase mmwi-lead-key) (plist-get command-Plist :key)) )
+  )
+(defun mmwi-control/create-final-command-list (commandlist)
+  "Crea la lista de comandos a partir de las configuraciones iniciales.\nInput: Lista de comandos\nOutput:Lista de comandos con los parametros finales"
+  
+  )
 ;; SORRY I DON'T KNOW HOW TO DO MACROS OK?
 (defmacro create-mmwi-function (command-plist)
   "Crea todas las funciones a partir de la lista de comandos"
