@@ -1,34 +1,3 @@
-(defun mmwi-control/VolumeUp ()
-  "Función para escoger aleatoriamente una canción"
-  (interactive)
-  (url-retrieve-synchronously (concat mmwi-location "/Control/VolumeUp"))
-  )
-(defun mmwi-control/VolumeDown ()
-  "Función para escoger aleatoriamente una canción"
-  (interactive)
-  (url-retrieve-synchronously (concat mmwi-location "/Control/VolumeDown"))
-  )
-
-(defun mmwi-control/PlayPause ()
-  "Función para parar o comenzar una canción"
-  (interactive)
-  (url-retrieve-synchronously (concat mmwi-location "/Control/PlayPause"))
-  )
-(defun mmwi-control/Stop ()
-  "Función para parar o comenzar una canción"
-  (interactive)
-  (url-retrieve-synchronously (concat mmwi-location "/Control/Stop"))
-  )
-(defun mmwi-control/SongPrev ()
-  "Función para parar o comenzar una canción"
-  (interactive)
-  (url-retrieve-synchronously (concat mmwi-location "/Control/SongPrev"))
-  )
-(defun mmwi-control/SongNext ()
-  "Función para parar o comenzar una canción"
-  (interactive)
-  (url-retrieve-synchronously (concat mmwi-location "/Control/SongNext"))
-  )
 (defun mmwi-control/create-final-command (command-Plist)
   "Toma un plist con un comando, y le agrega las cosas que le faltan para indicar los comandos finales"
   (plist-put command-Plist :command-name (concat "mmwi-control/" (plist-get command-Plist :command-name)) )
@@ -54,4 +23,8 @@
               )
             )
           ,all-commands)
+  )
+(defun mmwi-control/eval-final-commands ()
+  "Evalua todas las funciones entregadas en create-all-functions"
+  (mapcar 'eval mmwi-control/all-defuns)
   )

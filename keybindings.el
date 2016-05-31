@@ -1,4 +1,7 @@
 ;;Archivo que tiene los keybindings para el modo y toda esa caca.
+
+(setq mmwi-control/all-defuns (mmwi-control/create-all-functions (mmwi-control/create-final-command-list)))
+(mmwi-control/eval-final-commands)
 (spacemacs|define-transient-state mmwi-control
   :title "Mmwi remote control"
   :doc "\n[_h_] Prev \[_l_] next \[_j_] play/pause \ [_i_]VolDown \[_o_] VolUp."
