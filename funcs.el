@@ -35,9 +35,9 @@
   (plist-put command-Plist :command (concat mmwi-location (plist-get command-Plist :command)) )
   (plist-put command-Plist :key-full (concat mmwi-option-key (upcase mmwi-lead-key) (plist-get command-Plist :key)) )
   )
-(defun mmwi-control/create-final-command-list (commandlist)
+(defun mmwi-control/create-final-command-list ()
   "Crea la lista de comandos a partir de las configuraciones iniciales.\nInput: Lista de comandos\nOutput:Lista de comandos con los parametros finales"
-  
+  (mapcar 'mmwi-control/create-final-command mmwi-command-list)
   )
 ;; SORRY I DON'T KNOW HOW TO DO MACROS OK?
 (defmacro create-mmwi-function (command-plist)
