@@ -35,6 +35,9 @@
   "Evalua todas las funciones entregadas en create-all-functions"
   (mapcar 'eval mmwi-control/all-defuns)
   )
+(defun mmwi-control/create-docstring ()
+  "Crea el texto que va a ir en el transient state"
+  (concat "\n" (mapconcat (lambda (p-list) (plist-get p-list :key-doc)) mmwi-control/final-command-list "")))
 
 (defun mmwi-control/create-transient-state ()
   "Crea el transient state a partir de los parametros anteriores"
