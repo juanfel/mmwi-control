@@ -4,8 +4,8 @@
 (setq mmwi-control/all-defuns (mmwi-control/create-all-functions mmwi-control/final-command-list))
 (mmwi-control/eval-final-commands)
 (mmwi-control/create-transient-state)
-(spacemacs/declare-prefix "o" "Others")
-(spacemacs/declare-prefix "oF" "Mmwi-sin-transient")
+(spacemacs/declare-prefix mmwi-option-key "Others")
+(spacemacs/declare-prefix (concat mmwi-option-key (upcase mmwi-lead-key)) "Mmwi-sin-transient")
 (spacemacs/set-leader-keys
   "of" 'spacemacs/mmwi-control-transient-state/body
   "oFj" 'mmwi-control/PlayPause
