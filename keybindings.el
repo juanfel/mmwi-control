@@ -1,6 +1,7 @@
 ;;Archivo que tiene los keybindings para el modo y toda esa caca.
 
-(setq mmwi-control/all-defuns (mmwi-control/create-all-functions (mmwi-control/create-final-command-list)))
+(setq mmwi-control/final-command-list (mmwi-control/create-final-command-list))
+(setq mmwi-control/all-defuns (mmwi-control/create-all-functions mmwi-control/final-command-list))
 (mmwi-control/eval-final-commands)
 (spacemacs|define-transient-state mmwi-control
   :title "Mmwi remote control"
