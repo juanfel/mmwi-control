@@ -28,3 +28,13 @@
   "Evalua todas las funciones entregadas en create-all-functions"
   (mapcar 'eval mmwi-control/all-defuns)
   )
+
+(defun mmwi-control/create-transient-state ()
+  (eval
+   (apply (lambda (&rest pairs)
+            (append '(spacemacs|define-transient-state mmwi-control) pairs))
+          (append (list :title "Mmwi remote control" :doc "TO DO" :bindings)
+                  (mapcar (lambda (p-list)
+                            (list (plist-get p-list :key) (intern (plist-get p-list :command-name) )))
+                          mmwi-control/final-command-list)
+                  ))))
