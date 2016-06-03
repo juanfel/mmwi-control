@@ -49,3 +49,10 @@
                             (list (plist-get p-list :key) (intern (plist-get p-list :command-name) )))
                           mmwi-control/final-command-list)
                   ))))
+(defun mmwi-control/assign-non-transient-keys ()
+  "Asigna las teclas que no van en el transient mode"
+  (let ((key-list (apply 'append (mapcar
+                                  (lambda (p-list) (list (plist-get p-list :key-full) (intern (plist-get p-list :command-name))))
+                                  mmwi-control/final-command-list))))
+    (apply 'spacemacs/set-leader-keys (append (list (concat mmwi-option-key mmwi-lead-key) 'spacemacs/mmwi-control-transient-state/body ) key-list) ))
+  )

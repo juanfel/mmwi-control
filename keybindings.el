@@ -6,13 +6,5 @@
 (mmwi-control/create-transient-state)
 (spacemacs/declare-prefix mmwi-option-key "Others")
 (spacemacs/declare-prefix (concat mmwi-option-key (upcase mmwi-lead-key)) "Mmwi-sin-transient")
-(spacemacs/set-leader-keys
-  "of" 'spacemacs/mmwi-control-transient-state/body
-  "oFj" 'mmwi-control/PlayPause
-  "oFl" 'mmwi-control/SongNext
-  "oFh" 'mmwi-control/SongPrev
-  "oFo" 'mmwi-control/VolumeUp
-  "oFi"'mmwi-control/VolumeDown
 
-  )
-
+(mmwi-control/assign-non-transient-keys)
