@@ -44,7 +44,7 @@
   (eval
    (apply (lambda (&rest pairs)
             (append '(spacemacs|define-transient-state mmwi-control) pairs))
-          (append (list :title "Mmwi remote control" :doc "TO DO" :bindings)
+          (append (list :title "Mmwi remote control" :doc (mmwi-control/create-docstring) :bindings)
                   (mapcar (lambda (p-list)
                             (list (plist-get p-list :key) (intern (plist-get p-list :command-name) )))
                           mmwi-control/final-command-list)
