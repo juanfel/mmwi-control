@@ -37,6 +37,7 @@
   )
 
 (defun mmwi-control/create-transient-state ()
+  "Crea el transient state a partir de los parametros anteriores"
   (eval
    (apply (lambda (&rest pairs)
             (append '(spacemacs|define-transient-state mmwi-control) pairs))
