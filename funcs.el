@@ -1,5 +1,12 @@
+(defun mmwi-control/generate-docstring (command-Plist)
+  "Toma un comando y crea el docstring que le corresponde. Devuelve el par :ket-doc documentacion"
+
+  (plist-put command-Plist :key-doc
+   (concat "\\[_" (plist-get command-Plist :key) "_] " (plist-get command-Plist :command-name) "\s") )
+  )
 (defun mmwi-control/create-final-command (command-Plist)
   "Toma un plist con un comando, y le agrega las cosas que le faltan para indicar los comandos finales"
+  (mmwi-control/generate-docstring command-Plist)
   (plist-put command-Plist :command-name (concat "mmwi-control/" (plist-get command-Plist :command-name)) )
   (plist-put command-Plist :command (concat mmwi-location (plist-get command-Plist :command)) )
   (plist-put command-Plist :key-full (concat mmwi-option-key (upcase mmwi-lead-key) (plist-get command-Plist :key)) )
